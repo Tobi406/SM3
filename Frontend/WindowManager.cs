@@ -16,7 +16,7 @@ namespace Frontend
             _provider = provider;
             _queue = queue;
         }
-        
+
         public T Open<T>()
             where T : IWindow
         {
@@ -25,7 +25,7 @@ namespace Frontend
                 Close(OpenWindow, false);
                 OpenWindow = null;
             }
-            
+
             var instance = ActivatorUtilities.CreateInstance<T>(_provider);
 
             do
